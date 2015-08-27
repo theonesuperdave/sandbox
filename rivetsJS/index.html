@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RivetsJS - Lightweight and powerful data binding + templating solution for building modern web applications.</title>
+</head>
+<body>
+    <div id="index">
+        <p>{index.title}</p>
+        <label rv-text="index.message" placeholder="Placeholder Message"></label>
+        <section rv-html="index.quoteMarkupComputed"></section>
+        <label placeholder="Placeholder Message">{ index.conversation }</label>
+        <div>
+            <label placeholder="Placeholder Message">Date: { index.date | date }</label>
+            <label placeholder="Placeholder Message">Money: { index.money | currency }</label>
+        </div>
+        <br />
+        <div>
+            <!--Either of the below will work-->
+            <input type="button" value="Fanciness" rv-on-click="index.click" />
+            <!--<button rv-on-click="index.click">Fanciness</button>-->
+        </div>
+    </div>
+    <br />
+    <br />
+    <div id="index-partial">
+        <p>{indexPartial.title}</p>
+        <label rv-text="indexPartial.message"></label>
+        <div>
+            <button rv-on-click="indexPartial.click">Switcheroo</button>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/rivets.bundled.min.js"></script>
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/index.js"></script>
+    <script src="Scripts/index-partial.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            rivets.configure();
+            var indexView = rivets.bind($('#index'), { index: index });
+            var indexViewPartial = rivets.bind($('#index-partial'), { indexPartial: indexPartial });
+        });
+    </script>
+</body>
+</html>
