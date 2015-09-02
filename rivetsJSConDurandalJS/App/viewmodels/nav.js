@@ -3,6 +3,9 @@
     {
         title: app.title,
         router: router,
+        firstRoute: function() {
+            return nav.router.navigationModel()[0].hash;
+        },
         activate: function () {
         },
         binding: function () {

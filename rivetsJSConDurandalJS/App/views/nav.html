@@ -1,13 +1,12 @@
 ﻿<nav class="navbar navbar-fixed-top">
     <div id="nav" class="navbar-inner">
-        <a class="brand" href="/">
-            <span class="title" rv-text="vm.title">blah</span> 
+        <a class="brand" rv-href="vm.firstRoute" href="#">
+            <span class="title" rv-text="vm.title">blah</span>
         </a>
-        <div class="btn-group" data-bind="foreach: router.navigationModel">
-            <a data-bind="css: { active: isActive }, attr: { href: hash }, text: title" 
-                class="btn btn-info" href="#"></a>
+        <div class="btn-group" rv-each-route="vm.router.navigationModel">
+            <a rv-class-active="route.isActive()" rv-href="route.hash" rv-text="route.title" class="btn btn-info" href="#"></a>
         </div>
-        <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
+        <div class="loader pull-right" rv-class-active="vm.router.isNavigating">
             <div class="progress progress-striped active page-progress-bar">
                 <div class="bar" style="width: 100px;"></div>
             </div>
