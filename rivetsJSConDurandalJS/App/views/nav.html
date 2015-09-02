@@ -1,7 +1,7 @@
 ﻿<nav class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+    <div id="nav" class="navbar-inner">
         <a class="brand" href="/">
-            <span class="title">Durandal con Rivets</span> 
+            <span class="title" rv-text="vm.title">blah</span> 
         </a>
         <div class="btn-group" data-bind="foreach: router.navigationModel">
             <a data-bind="css: { active: isActive }, attr: { href: hash }, text: title" 
