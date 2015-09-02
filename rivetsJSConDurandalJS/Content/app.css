@@ -220,3 +220,64 @@ footer span {
         font-size: 14px;
     }
 }
+
+.mask-parent {
+    position: relative;
+}
+.mask {
+    display: none;
+    position: absolute;
+    clear: both;
+    overflow: hidden;
+    z-index: 1110;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    min-height: 93vh;
+    min-width: 93vh;
+}
+.mask-bg {
+    position: absolute;
+    clear: both;
+    overflow: hidden;
+    z-index: 1110;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+.mask-msg {
+    position: fixed;
+    width: 240px;
+    height: 165px;
+    max-width: 100%;
+    text-align: center;
+    z-index: 1120;
+    top: 35vh;
+    left: 50%;
+    margin-left: -82px;
+    display: block;
+    background: #fff;
+    padding: 25px 0px;
+    border-radius: 3px;
+    opacity: 1;
+    background: #333;
+    border: 1px solid #252525;
+}
+.mask-msg img {
+    margin: 0px auto 10px;
+    display: block;
+}
+.mask-msg span {
+    text-align: center;
+    color: #245580;
+    color: #aaa;
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    text-shadow: 0 1px 0px #000, 0 1px 5px #111;
+}
