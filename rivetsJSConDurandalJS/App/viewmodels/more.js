@@ -18,6 +18,11 @@
             more.usesBinding.unbind();
         }
 
+        more.prototype.detached = function () {
+            more.typesBinding.unbind();
+            more.usesBinding.unbind();
+        }
+
         return more;
     })();
 

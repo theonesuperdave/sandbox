@@ -31,7 +31,10 @@
         compositionComplete: function() {
         },
         deactivated: function() {
-            home.showQuestion.unbind();
+            home.rivetsBinding.unbind();
+        },
+        detached: function () {
+            home.rivetsBinding.unbind();
         }
     }
 
