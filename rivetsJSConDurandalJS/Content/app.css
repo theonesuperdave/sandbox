@@ -16,7 +16,6 @@ html {
     padding: 0;
     color: black;
     background: #EBE8E5;
-    overflow: hidden;
 }
 
 body {
@@ -30,13 +29,13 @@ body {
 h1, h2, h3 {
     text-transform: uppercase;
     letter-spacing: -1px !important;
+    /*margin-top: 80px;*/
     color: #777;
     padding: 10px;
 }
 
 section.main {
-    margin-top: 80px;
-    overflow-y: auto;
+    /*margin-top: 80px;*/
 }
 
 .navbar .brand {
@@ -225,6 +224,7 @@ footer span {
     position: relative;
 }
 .mask {
+    margin-top: 80px;
     display: none;
     position: absolute;
     clear: both;
