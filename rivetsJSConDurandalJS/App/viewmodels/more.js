@@ -1,4 +1,5 @@
-﻿define(['viewmodels/rivetTypes', 'viewmodels/rivetUses'], function (types, uses) {
+﻿// DurandalJS Transient
+define(['viewmodels/rivetTypes', 'viewmodels/rivetUses'], function (types, uses) {
     var more = (function () {
         function more() {}
 
