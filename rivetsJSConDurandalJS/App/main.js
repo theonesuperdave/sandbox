@@ -15,6 +15,8 @@ require.config({
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
 
+/*********************************RIVETS JS **********************************/
+
 rivets.configure({
 
     // Attribute prefix in templates
@@ -35,6 +37,7 @@ rivets.configure({
     }
 });
 
+// custom formatters
 rivets.formatters.currency = {
     read: function (value) {
         return '$' + value;
@@ -44,9 +47,11 @@ rivets.formatters.currency = {
     }
 }
 
-define(['durandal/app', 'durandal/viewLocator', 'durandal/system'], boot);
+/*********************************END RIVETS JS **********************************/
 
-function boot (app, viewLocator, system) {
+define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'rivetsJSCustomBindings'], boot);
+
+function boot(app, viewLocator, system, rivetsJSCustomBindings) {
 
     // Enable debug message to show in the console 
     system.debug(true); 
@@ -58,6 +63,8 @@ function boot (app, viewLocator, system) {
     });
 
     rivets.configure();
+
+    rivetsJSCustomBindings.init();
     
     app.start().then(function () {
         // When finding a viewmodel module, replace the viewmodel string 

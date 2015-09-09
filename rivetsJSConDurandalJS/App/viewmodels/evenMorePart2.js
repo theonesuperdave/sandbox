@@ -1,21 +1,33 @@
 ﻿// DurandalJS Singleton
 define(['durandal/app', 'plugins/router'], function (app, router) {
     return {
-        activate: function () {
+        goodPermission: 'can do stuff',
+        badPermission: 'barf',
+
+        activate: function() {
         },
-        binding: function () {
+        binding: function() {
             var self = this;
             self.rivetsBinding = rivets.bind($('#evenMorePart2'), { vm: self });
         },
-        compositionComplete: function () {
+        compositionComplete: function() {
         },
-        deactivated: function () {
+        deactivated: function() {
             var self = this;
-            self.rivetsBinding.unbind();
+
+            self.unbindRivetsIfNecessary();
         },
-        detached: function () {
+        detached: function() {
             var self = this;
-            self.rivetsBinding.unbind();
+
+            self.unbindRivetsIfNecessary();
+        },
+        unbindRivetsIfNecessary: function() {
+            var self = this;
+
+            if (self.rivetsBinding) {
+                self.rivetsBinding.unbind();
+            }
         }
     }
 });
