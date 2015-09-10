@@ -1,4 +1,4 @@
-﻿define(['user'], function (user) {
+﻿define(['user', 'rivets'], function (user, rivets) {
     var rivetsJSCustomBindings = {
         init: function () {
             rivets.binders.haspermission = function (element, value) {

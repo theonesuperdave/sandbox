@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'plugins/router'], function (app, router) {
+﻿define(['durandal/app', 'plugins/router', 'rivets'], function (app, router, rivets) {
     var evenMore =
     {
         activate: function () {

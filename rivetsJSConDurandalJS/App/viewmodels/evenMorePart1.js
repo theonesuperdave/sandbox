@@ -1,4 +1,4 @@
-﻿define([], function () {
+﻿define(['rivets'], function (rivets) {
     var evenMorePart1 =
     {
         images: ['../../Content/images/rivets-sample1.jpg', '../../Content/images/rivets-sample2.jpg', '../../Content/images/rivets-sample3.jpg'],

@@ -15,43 +15,11 @@ require.config({
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
 
-/*********************************RIVETS JS **********************************/
+define('rivets', rivets); // For view model data-binding
 
-rivets.configure({
+define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'rivets', 'rivetsJSCustomBindings'], boot);
 
-    // Attribute prefix in templates
-    prefix: 'rv',
-
-    // Preload templates with initial data on bind
-    preloadData: true,
-
-    // Root sightglass interface for keypaths
-    rootInterface: '.',
-
-    // Template delimiters for text bindings
-    templateDelimiters: ['{', '}'],
-
-    // Augment the event handler of the on-* binder
-    handler: function (target, event, binding) {
-        this.call(target, event, binding.view.models);
-    }
-});
-
-// custom formatters
-rivets.formatters.currency = {
-    read: function (value) {
-        return '$' + value;
-    },
-    publish: function (value) {
-        return value.replace('$');
-    }
-}
-
-/*********************************END RIVETS JS **********************************/
-
-define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'rivetsJSCustomBindings'], boot);
-
-function boot(app, viewLocator, system, rivetsJSCustomBindings) {
+function boot(app, viewLocator, system, rivets, rivetsJSCustomBindings) {
 
     // Enable debug message to show in the console 
     system.debug(true); 
@@ -61,6 +29,40 @@ function boot(app, viewLocator, system, rivetsJSCustomBindings) {
     app.configurePlugins({
         router: true
     });
+
+    /*********************************RIVETS JS **********************************/
+
+    rivets.configure({
+
+        // Attribute prefix in templates
+        prefix: 'rv',
+
+        // Preload templates with initial data on bind
+        preloadData: true,
+
+        // Root sightglass interface for keypaths
+        rootInterface: '.',
+
+        // Template delimiters for text bindings
+        templateDelimiters: ['{', '}'],
+
+        // Augment the event handler of the on-* binder
+        handler: function (target, event, binding) {
+            this.call(target, event, binding.view.models);
+        }
+    });
+
+    // custom formatters
+    rivets.formatters.currency = {
+        read: function (value) {
+            return '$' + value;
+        },
+        publish: function (value) {
+            return value.replace('$');
+        }
+    }
+
+    /*********************************END RIVETS JS **********************************/
 
     rivets.configure();
 

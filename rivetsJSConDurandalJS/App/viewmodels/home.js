@@ -1,4 +1,4 @@
-﻿define([], function() {
+﻿define(['rivets'], function (rivets) {
     var home =
     {
         rivetsBinding: {},

@@ -1,5 +1,5 @@
 ﻿// DurandalJS Singleton
-define(['durandal/app', 'plugins/router'], function (app, router) {
+define(['durandal/app', 'plugins/router', 'rivets'], function (app, router, rivets) {
 
     return {
         goodPermission: 'can do stuff',
