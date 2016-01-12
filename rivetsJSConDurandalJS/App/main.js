@@ -22,7 +22,7 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'rivets', 'ri
 function boot(app, viewLocator, system, rivets, rivetsJSCustomBindings) {
 
     // Enable debug message to show in the console 
-    system.debug(true); 
+    system.debug(false); 
 
     app.title = 'Durandal con Rivets';
 
