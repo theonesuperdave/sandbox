@@ -1,0 +1,34 @@
+{
+  "name": "karma-with-mocha",
+  "version": "1.0.0",
+  "description": "Sample of JS Unit tests using karma and mocha",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-connect": "~0.11.2",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-karma": "^2.0.0",
+    "grunt-mocha": "~0.4.13",
+    "karma": "^1.1.2",
+    "karma-html2js-preprocessor": "^1.0.0",
+    "karma-jasmine": "~0.2.0",
+    "karma-mocha": "~0.2.0",
+    "karma-mocha-reporter": "~1.1.1",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "karma-requirejs": "~0.2.2",
+    "karma-should": "~0.0.1",
+    "karma-sinon": "~1.0.4",
+    "karma-teamcity-reporter": "~0.1.2",
+    "load-grunt-tasks": "^3.5.0",
+    "phantomjs": "~1.9.18",
+    "requirejs": "~2.1.20",
+    "should": "~3.3.2",
+    "sinon": "~1.9.1"
+  },
+  "main": "gruntfile.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
