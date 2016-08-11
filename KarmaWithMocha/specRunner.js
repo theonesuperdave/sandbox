@@ -30,7 +30,7 @@ requirejs.config({
 });
 
 define('sinon', function () { return sinon; });
-define('should', function () { return sinon; });
+define('should', function () { return should; });
 
 // This piece is needed if running mocha stand-alone
 if (karma == undefined) {
