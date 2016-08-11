@@ -11,7 +11,7 @@
 		describe('test-1', function () {
 			it('should always pass', function () {
 				var blah = true;
-				blah.should.be.true;
+				blah.should.be.true();
 			});
 		});
 	})
