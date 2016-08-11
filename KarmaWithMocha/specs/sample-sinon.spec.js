@@ -38,6 +38,20 @@
 
                 targetStub.goalCount().should.be.equal(3);
                 targetStub.scoreGoal.called.should.be.true();
+
+                targetStub.goalCount.restore();
+                targetStub.scoreGoal.restore();
+            });
+
+            it('sinon-mock-target', function () {
+                var targetMock = sinon.mock(target);
+                targetMock.expects('goalCount').atLeast(1).returns(1);
+
+                target.goalCount();
+                
+                targetMock.verify();
+
+                targetMock.restore();
             });
         });
     });
