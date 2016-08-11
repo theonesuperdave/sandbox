@@ -28,6 +28,17 @@
                 target.scoreGoal.restore();
                 target.goalCount.restore();
             });
+
+            it('sinon-stub-target', function () {
+                var targetStub = sinon.stub(target);
+
+                targetStub.goalCount.returns(3);
+                targetStub.scoreGoal.returns();
+                targetStub.scoreGoal();
+
+                targetStub.goalCount().should.be.equal(3);
+                targetStub.scoreGoal.called.should.be.true();
+            });
         });
     });
 });
