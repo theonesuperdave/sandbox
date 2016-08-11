@@ -15,8 +15,8 @@ if (karma) {
 requirejs.config({
     baseUrl: '/base/js',
     paths: {
-        should: 'node_modules/should/should',
-        sinon: 'node_modules/sinon/lib/sinon'
+        should: '../node_modules/should/should',
+        sinon: '../node_modules/sinon/lib/sinon'
     },
 
     deps: tests,
@@ -29,7 +29,8 @@ requirejs.config({
     callback: function () { if (karma) { karma.start(); } return; }
 });
 
-//define('sinon', function () { return sinon; });
+define('sinon', function () { return sinon; });
+define('should', function () { return sinon; });
 
 // This piece is needed if running mocha stand-alone
 if (karma == undefined) {

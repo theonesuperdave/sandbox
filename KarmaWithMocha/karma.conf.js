@@ -15,6 +15,8 @@ module.exports = function (config) {
         files: [
             { pattern: 'js/**/*.js', included: false }, // Get the source
             { pattern: 'specs/**/*.spec.js', included: false }, // Pick up our test files
+
+            //{ pattern: './node_modules/should/should.js', included: false },
             { pattern: 'specRunner.js', included: true }, //requireJS plumbing
         ],
 
