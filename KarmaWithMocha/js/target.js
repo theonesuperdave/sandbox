@@ -1,7 +1,7 @@
 ﻿define([], function () {
     var target = (function () {
+        var _this = this;
         function Target() {
-            var _this = this;
             this.goalsScored = 0;
         }
 
@@ -11,6 +11,13 @@
 
         Target.prototype.scoreGoal = function () {
             this.goalsScored++;
+        };
+
+        Target.prototype.scoreGoalDelayed = function () {
+            var _this = this;
+            window.setInterval(function () {
+                _this.goalsScored++;
+            }, 1000); // delay for a second in real time
         };
 
         Target.prototype.goalCount = function () {
