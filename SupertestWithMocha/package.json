@@ -1,0 +1,11 @@
+{
+  "name": "supertestwithmocha",
+  "version": "1.0.0",
+  "description": "A sample app showcasing API testing with supertest and mocha",
+  "main": "index.js",
+  "scripts": {    
+    "integration": "node_modules/.bin/mocha integration-tests/**/*.spec.js --timeout 5000 --slow 2000"
+  },
+  "author": "Dave Robertson",
+  "license": "ISC"
+}
