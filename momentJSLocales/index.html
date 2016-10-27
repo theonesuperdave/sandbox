@@ -29,8 +29,17 @@
         console.log("weekdays: " + moment.weekdays());
         console.log("months: " + moment.months());
 
+        // Moment hard-codes "en" as the locale, so if we want to use the current locale,
+        //    we can override the prototype which will cascade across instances to give
+        //    us the representation that we want. Another option would be to roll our own
+        //    function and call it instead.
+        moment.prototype.toString = function () {
+            return this.format('dddd MMMM DD YYYY HH:mm:ss [GMT]ZZ');
+        }
+
         var now = moment();
-        var nowContent = "This is now: " + now.format('dddd MMMM DD YYYY HH:mm:ss [GMT]ZZ');
+        //var nowContent = "This is now: " + now.format('dddd MMMM DD YYYY HH:mm:ss [GMT]ZZ');
+        var nowContent = "This is now: " + now.toString();
         document.getElementById("now").innerText = nowContent;
     </script>
 </body>
