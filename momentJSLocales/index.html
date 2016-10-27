@@ -13,8 +13,9 @@
         <p><strong>Target Locale: </strong><span id="targetLocale">No culture</span></p>
     </div>
     <div>
-        <span id="now">No data</span>
-    </div>
+        <p><strong>This is now using momentJS:</strong> <span id="now">No data</span></p>
+        <p><strong>This is now using pure JS:</strong> <span id="now-again">No data</span></p>
+</div>
 
     <script type="text/javascript">
         console.log("moment locales: " + moment.locales());
@@ -39,8 +40,11 @@
 
         var now = moment();
         //var nowContent = "This is now: " + now.format('dddd MMMM DD YYYY HH:mm:ss [GMT]ZZ');
-        var nowContent = "This is now: " + now.toString();
+        var nowContent = now.toString();
         document.getElementById("now").innerText = nowContent;
+
+        var nowContent = new Date().toLocaleString("es", { weekday: "long", month: "long", day: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", timeZoneName: "long" });
+        document.getElementById("now-again").innerText = nowContent;
     </script>
 </body>
 </html>
