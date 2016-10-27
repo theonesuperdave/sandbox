@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Locales, Locales, Locales</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/moment.min.js"></script>
+    <script src="Scripts/moment-with-locales.min.js"></script>
+    <!--<script src="Scripts/locale/moment-es.js"></script>-->
+</head>
+<body>
+    <div>
+        <p><strong>Current Locale:</strong> <span id="currentLocale">No culture</span></p>
+        <p><strong>Target Locale: </strong><span id="targetLocale">No culture</span></p>
+    </div>
+    <div>
+        <span id="now">No data</span>
+    </div>
+
+    <script type="text/javascript">
+        console.log("moment locales: " + moment.locales());
+        var currentLocale = window.navigator.userLanguage || window.navigator.language; //detect what browser setting
+        var targetLocale = "es";
+        document.getElementById("currentLocale").innerText = currentLocale;
+        document.getElementById("targetLocale").innerText = targetLocale;
+
+        var locale = moment.locale(targetLocale);
+
+        console.log("current locale: " + locale);
+        console.log("current locale: " + moment.weekdays());
+        console.log("current locale: " + moment.months());
+
+        var now = moment();
+        var nowContent = "This is now: " + now.format('dddd MMMM DD YYYY HH:mm:ss [GMT]ZZ');
+        document.getElementById("now").innerText = nowContent;
+    </script>
+</body>
+</html>
