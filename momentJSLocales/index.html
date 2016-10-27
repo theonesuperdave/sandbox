@@ -26,8 +26,8 @@
         var locale = moment.locale(targetLocale);
 
         console.log("current locale: " + locale);
-        console.log("current locale: " + moment.weekdays());
-        console.log("current locale: " + moment.months());
+        console.log("weekdays: " + moment.weekdays());
+        console.log("months: " + moment.months());
 
         var now = moment();
         var nowContent = "This is now: " + now.format('dddd MMMM DD YYYY HH:mm:ss [GMT]ZZ');
