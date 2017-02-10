@@ -1,8 +1,9 @@
-﻿#define MyAppName "Inno Windows Service"
+#define MyAppName "Inno Windows Service"
 #define MyAppVersion GetFileVersion('..\bin\Debug\Inno-WindowsService.exe')
 #define MyAppPublisher "Dave"
 #define MyAppExeName "Inno-WindowsService.exe"
 #define MyAppServiceName "Inno-WindowsService"
+#define MyAppCopyright "Copyright 2017"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -33,7 +34,6 @@ Source: "..\bin\Debug\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
 Filename: {sys}\sc.exe; Parameters: "stop {#MyAppServiceName}" ; Flags: runhidden
