@@ -1,0 +1,101 @@
+{
+  "Job": {
+    "Stop": null,
+    "Region": null,
+    "Namespace": null,
+    "ID": "sample",
+    "ParentID": null,
+    "Name": "sample",
+    "Type": "service",
+    "Priority": null,
+    "AllAtOnce": null,
+    "Datacenters": [
+      "blah-again"
+    ],
+    "Constraints": null,
+    "TaskGroups": [
+      {
+        "Name": "number-one",
+        "Count": 1,
+        "Constraints": null,
+        "Tasks": [
+          {
+            "Name": "website-2",
+            "Driver": "docker",
+            "User": "",
+            "Config": {
+              "image": "docker-things.io/website-2",
+              "port_map": [
+                {
+                  "http": 80,
+                  "https": 443
+                }
+              ]
+            },
+            "Constraints": null,
+            "Env": {
+              "APPSETTING_value1": "25",
+              "APPSETTING_value2": "https://blah.com",
+              "CONNSTR_DB": "Server='blah';Initial Catalog='blah';Persist Security Info=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Network Library=dbmssocn;User Id='blah';password='blah'"
+            },
+            "Services": [
+              {
+                "Id": "",
+                "Name": "",
+                "Tags": [
+                  "website-2"
+                ],
+                "CanaryTags": null,
+                "PortLabel": "",
+                "AddressMode": "",
+                "Checks": null,
+                "CheckRestart": null
+              }
+            ],
+            "Resources": {
+              "CPU": 4000,
+              "MemoryMB": 8000,
+              "DiskMB": null,
+              "IOPS": null,
+              "Networks": [
+                {
+                  "Device": "",
+                  "CIDR": "",
+                  "IP": "",
+                  "MBits": 100,
+                  "ReservedPorts": [
+                    {
+                      "Label": "http",
+                      "Value": 80
+                    },
+                    {
+                      "Label": "https",
+                      "Value": 443
+                    }
+                  ],
+                  "DynamicPorts": null
+                }
+              ]
+            },
+            "Meta": null,
+            "KillTimeout": null,
+            "LogConfig": null,
+            "Artifacts": null,
+            "Vault": null,
+            "Templates": null,
+            "DispatchPayload": null,
+            "Leader": false,
+            "ShutdownDelay": 0,
+            "KillSignal": ""
+          }
+        ],
+        "RestartPolicy": null,
+        "ReschedulePolicy": null,
+        "EphemeralDisk": null,
+        "Update": null,
+        "Migrate": null,
+        "Meta": null
+      }
+    ]
+  }
+}
