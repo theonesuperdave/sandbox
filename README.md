@@ -9,3 +9,9 @@ An implementation of DurandalJS using RivetsJS for everything but the compose bi
 
 ### KarmaWithMocha
 This is a simple setup using Karma for the test framework and Mocha as the test runner. Since requireJS is a thing, there is the config and example of that as well. Grunt is also an option for running Mocha here, but it doesn't play well with requireJS, so examples are limited.
+
+### SupertestWithMocha
+This one is the same tech stack as `KarmaWithMocha`, only adding `supertest` on top of it for API calls. The result is a light-weight, performant test kit which can be used for various integration/API tests. The output can be piped to a CI/CD server or other dashboard for visibility and monitoring.
+
+### json-config-transform
+I needed a simple console app to transform config files written in `JSON`. This one is a basic one written using .Net Core 2.0. The source file contents are iterated over, replacing any matching content present in a target file of the same structure. Values are replaced, and outputted for use in the necessary services.
