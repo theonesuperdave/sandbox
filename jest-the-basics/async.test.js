@@ -1,3 +1,5 @@
+const request = require('axios');
+
 test('should hold execution for \'done\'', done => {
     function async() {
         expect(true).toBe(true);
@@ -18,4 +20,20 @@ test('should work for promises', done => {
 
         done(); // comment this out to see it fail (after a timeout period)
     });
+});
+
+test('should work for HTTP calls', done => {
+    const spy = jest.spyOn(request, 'get').mockImplementation(() => {
+         return new Promise((resolve, reject) =>  resolve({ blah: 'blah' 
+        }));
+    });
+
+    request.get('http://blah.blah')
+    .then((response) => {
+        expect(response.blah).toBe('blah');
+
+        done();
+    });
+
+    spy.mockRestore();
 });
