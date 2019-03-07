@@ -15,3 +15,6 @@ This one is the same tech stack as `KarmaWithMocha`, only adding `supertest` on 
 
 ### json-config-transform
 I needed a simple console app to transform config files written in `JSON`. This one is a basic one written using .Net Core 2.0. The source file contents are iterated over, replacing any matching content present in a target file of the same structure. Values are replaced, and outputted for use in the necessary services.
+
+### jest-the-basics
+In this sample, we setup `Jest` to run unit tests against our JavaScript modules. Everything runs under NodeJS and can mock out API calls and other dependencies as well as report code coverage for the tests. Nothing fancy, just a kind of starter kit which shows how to get started testing either client- or server-side code.
