@@ -10,6 +10,7 @@
     "grunt-mocha": "~0.4.13",
     "karma": "^1.1.2",
     "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.2",
     "karma-html2js-preprocessor": "^1.0.0",
     "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "~0.2.0",

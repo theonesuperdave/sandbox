@@ -1,4 +1,18 @@
 // Karma config
+
+// Setup our environment for local debugging as necessary
+var browserLaunchRetryLimit = 2;
+var sourcePreprocessors = ['coverage'];
+
+function isDebug(argument) {
+    return argument === '--debug';
+}
+
+if (process.argv.some(isDebug)) {
+    browserLaunchRetryLimit = 0;
+    sourcePreprocessors = []; // code coverage messes with the content, so don't mix with debugging
+}
+
 module.exports = function (config) {
     config.set({
 
@@ -29,12 +43,30 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             'specRunner.html': ['html2js'],
+            './js/*.js': sourcePreprocessors // pickup any JS files in the root
         },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'mocha'],
+        reporters: ['mocha', 'coverage'],
+
+        coverageReporter: {
+            // specify a common output directory
+            dir: 'build/reports/coverage',
+            includeAllSources: true,
+            reporters: [
+                // reporters not supporting the `file` property
+                //{ type: 'html', subdir: 'report-html' },
+                // reporters supporting the `file` property, use `subdir` to directly
+                // output them in the `dir` directory
+                { type: 'html', subdir: './html' },
+                { type: 'text', subdir: './text', file: 'report.txt' },
+                { type: 'text-summary', subdir: './text', file: 'report-summary.txt' },
+                { type: 'json', subdir: './json', file: 'report.json' },
+                { type: 'json-summary', subdir: './json', file: 'report-summary.json' },
+            ]
+        },
 
 
         // web server port
