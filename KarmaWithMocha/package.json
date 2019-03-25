@@ -29,7 +29,8 @@
   "main": "gruntfile.js",
   "dependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/karma start  --browsers PhantomJS",
+    "test-debug": "node_modules/.bin/karma start  --browsers Chrome --debug --single-run=false"
   },
   "author": "",
   "license": "ISC"
