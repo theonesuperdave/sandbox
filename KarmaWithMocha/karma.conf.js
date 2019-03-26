@@ -13,6 +13,9 @@ if (process.argv.some(isDebug)) {
     sourcePreprocessors = []; // code coverage messes with the content, so don't mix with debugging
 }
 
+const puppeteer = require('puppeteer');
+process.env.CHROME_BIN = puppeteer.executablePath();
+
 module.exports = function (config) {
     config.set({
 
@@ -88,7 +91,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS', 'Chrome', 'IE'],
+        browsers: ['PhantomJS', 'Chrome', 'IE', 'ChromeHeadless'],
 
 
         // Continuous Integration mode
