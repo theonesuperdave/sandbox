@@ -1,0 +1,26 @@
+# list all running docker containers
+docker ps
+
+# get info for running containers
+docker stats
+
+# attach output from a running container to the current window
+docker attach [ID]
+
+# stop a running container
+docker kill [CONTAINER_NAME]
+
+# start an existing container
+docker start [ID]
+
+# get a bash shell into a running container
+docker exec -it [ID] bash
+
+# get a Powershell shell into a running container
+docker exec -it [ID] powershell.exe
+
+# get the IP address of a running container
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [ID]
+
+# build a docker container from a local Dockerfile
+docker build -t team-city-agent-nodejs --no-cache .
