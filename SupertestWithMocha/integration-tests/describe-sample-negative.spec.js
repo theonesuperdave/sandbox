@@ -14,6 +14,7 @@ describe('sample - negative testing', () => {
         });
     });
 
+    // You can use the "done" callback from Mocha if necessary rather than async/await
     it('should be internal server error', (done) => {
         request(app)
           .get('/internalServerError')

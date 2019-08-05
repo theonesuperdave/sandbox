@@ -11,35 +11,21 @@ describe('sample', () => {
         });
     });
 
-    it('should get Mace Windu', (done) => {
-        request(app)
+    it('should get Mace Windu', async () => {
+        await request(app)
           .get('/jedi/mace')
           .expect('Content-Type', /json/)
           .expect(200)
-          .expect(/Mace Windu/)
-          .end(function (error, response) {
-              if (error) {
-                  should.not.exist(error);
-              }
-
-              done();
-          });
+          .expect(/Mace Windu/);
     });
 
-    it('should have purple lightsaber', (done) => {
-        request(app)
+    it('should have purple lightsaber', async () => {
+        let response = await request(app)
           .get('/jedi/mace')
           .expect('Content-Type', /json/)
           .expect(200)
-          .expect(/lightsaberColor.*purple/)
-          .end(function (error, response) {
-              if (error) {
-                  should.not.exist(error);
-              }
+          .expect(/lightsaberColor.*purple/);
 
-              response.body.lightsaberColor.should.be.equal('purple');
-
-              done();
-          });
+          response.body.lightsaberColor.should.be.equal('purple');
     });
 });
