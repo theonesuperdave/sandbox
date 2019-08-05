@@ -4,14 +4,15 @@
   "description": "A sample app showcasing API testing with supertest and mocha",
   "main": "index.js",
   "scripts": {
-    "integration": "node_modules/.bin/mocha integration-tests/**/*.spec.js --timeout 5000 --slow 2000"
+    "test": "node_modules/.bin/mocha integration-tests/**/*.spec.js --timeout 5000 --slow 2000",
+    "test-debug": "node_modules/.bin/mocha --inspect-brk=9229 integration-tests/**/*.spec.js --timeout 0 --slow 0"
   },
   "author": "Dave Robertson",
   "license": "ISC",
   "devDependencies": {
     "express": "^4.14.0",
-    "mocha": "^3.1.0",
+    "mocha": "^6.2.0",
     "should": "^11.1.0",
-    "supertest": "^2.0.0"
+    "supertest": "^4.0.2"
   }
 }
