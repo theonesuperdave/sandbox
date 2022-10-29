@@ -8,7 +8,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-karma": "^2.0.0",
     "grunt-mocha": "~0.4.13",
-    "karma": "^1.1.2",
+    "karma": "^6.4.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-coverage": "^1.1.2",
     "karma-html2js-preprocessor": "^1.0.0",
